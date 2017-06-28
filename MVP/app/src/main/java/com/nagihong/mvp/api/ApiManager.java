@@ -1,11 +1,28 @@
 package com.nagihong.mvp.api;
 
+import com.nagihong.mvp.api.documents.DocumentsRequestBean;
+import com.nagihong.mvp.api.documents.DocumentsResultBean;
+import com.nagihong.mvp.api.files.FilesRequestBean;
+import com.nagihong.mvp.api.files.FilesResultBean;
+import com.nagihong.mvp.api.login.LoginRequestBean;
+import com.nagihong.mvp.api.login.LoginResultBean;
+import com.nagihong.mvp.api.musics.MusicsRequestBean;
+import com.nagihong.mvp.api.musics.MusicsResultBean;
+import com.nagihong.mvp.api.photos.PhotosRequestBean;
+import com.nagihong.mvp.api.photos.PhotosResultBean;
 import com.nagihong.mvp.base.api.ApiCallback;
 import com.nagihong.mvp.base.api.ApiResultBean;
+import com.nagihong.mvp.constants.ApiConstants;
 import com.nagihong.mvp.constants.Constants;
+import com.nagihong.mvp.model.DocumentBean;
+import com.nagihong.mvp.model.FileBean;
+import com.nagihong.mvp.model.MusicBean;
+import com.nagihong.mvp.model.PhotoBean;
+import com.nagihong.mvp.model.UserBean;
 import com.nagihong.mvp.utils.GsonUtils;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -63,4 +80,23 @@ public class ApiManager {
         });
     }
 
+    public static void login(LoginRequestBean request, ApiCallback<UserBean> callback) {
+        post(ApiConstants.API_LOGIN, request, LoginResultBean.class, callback);
+    }
+
+    public static void fetchMusics(MusicsRequestBean request, ApiCallback<List<MusicBean>> callback) {
+        post(ApiConstants.API_MUSICS, request, MusicsResultBean.class, callback);
+    }
+
+    public static void fetchFiles(FilesRequestBean request, ApiCallback<List<FileBean>> callback) {
+        post(ApiConstants.API_FILES, request, FilesResultBean.class, callback);
+    }
+
+    public static void fetchPhotos(PhotosRequestBean request, ApiCallback<List<PhotoBean>> callback) {
+        post(ApiConstants.API_PHOTOS, request, PhotosResultBean.class, callback);
+    }
+
+    public static void fetchDocuments(DocumentsRequestBean request, ApiCallback<List<DocumentBean>> callback) {
+        post(ApiConstants.API_DOCUMENTS, request, DocumentsResultBean.class, callback);
+    }
 }

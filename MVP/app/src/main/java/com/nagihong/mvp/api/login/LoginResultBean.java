@@ -7,7 +7,7 @@ import com.nagihong.mvp.model.UserBean;
  * Created by channagihong on 25/06/2017.
  */
 
-public class LoginResultBean extends ApiResultBean<UserBean>{
+public class LoginResultBean extends ApiResultBean<UserBean> {
 
     private String accountId;
     private String name;
@@ -49,7 +49,7 @@ public class LoginResultBean extends ApiResultBean<UserBean>{
 
 
     @Override
-    protected UserBean toLocalBean() {
+    public UserBean toLocalBean() {
         UserBean userBean = new UserBean();
         userBean.setAccountId(accountId);
         userBean.setName(name);

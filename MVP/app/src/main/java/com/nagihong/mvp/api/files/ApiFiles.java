@@ -21,7 +21,7 @@ import okhttp3.Response;
  */
 public class ApiFiles {
 
-    public void fetchFiles(LoginRequestBean bean, final ApiCallback<List<FileBean>> callback) {
+    public void fetchFiles(FilesRequestBean bean, final ApiCallback<List<FileBean>> callback) {
 
         Request filesRequest = new ApiBuilder(ApiConstants.API_FILES, bean).build();
         ApiManager.getHttpClient().newCall(filesRequest).enqueue(new Callback() {

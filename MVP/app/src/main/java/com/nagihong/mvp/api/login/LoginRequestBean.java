@@ -8,6 +8,7 @@ public class LoginRequestBean {
 
     private String username;
     private String password;
+    private String verificationCode;
 
     public String getUsername() {
         return username;
@@ -23,5 +24,13 @@ public class LoginRequestBean {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
     }
 }

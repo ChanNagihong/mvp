@@ -15,7 +15,7 @@ public class MusicsResultBean extends ApiResultBean<List<MusicBean>> {
     private List<MusicBean> list;
 
     @Override
-    protected List<MusicBean> toLocalBean() {
+    public List<MusicBean> toLocalBean() {
         return list;
     }
 

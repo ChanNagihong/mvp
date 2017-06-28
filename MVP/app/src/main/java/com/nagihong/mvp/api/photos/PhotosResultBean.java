@@ -10,15 +10,15 @@ import java.util.List;
  * Created by channagihong on 27/06/2017.
  */
 
-public class PhotosResultBean extends ApiResultBean<List<PhotoBean>>{
+public class PhotosResultBean extends ApiResultBean<List<PhotoBean>> {
 
     private List<ResultBean> list;
 
     @Override
-    protected List<PhotoBean> toLocalBean() {
+    public List<PhotoBean> toLocalBean() {
         List<PhotoBean> resultList = new LinkedList<>();
 
-        for(ResultBean item : list) {
+        for (ResultBean item : list) {
             PhotoBean bean = new PhotoBean();
             bean.setFileName(item.fileName);
             bean.setExtension(item.extension);

@@ -22,7 +22,7 @@ public class FilesResultBean extends ApiResultBean<List<FileBean>> {
     }
 
     @Override
-    protected List<FileBean> toLocalBean() {
+    public List<FileBean> toLocalBean() {
         return this.fileList;
     }
 

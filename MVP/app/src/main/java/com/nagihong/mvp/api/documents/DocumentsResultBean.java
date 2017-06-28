@@ -15,7 +15,7 @@ public class DocumentsResultBean extends ApiResultBean<List<DocumentBean>> {
     private List<ResultBean> list;
 
     @Override
-    protected List<DocumentBean> toLocalBean() {
+    public List<DocumentBean> toLocalBean() {
 
         List<DocumentBean> resultList = new LinkedList<>();
 
