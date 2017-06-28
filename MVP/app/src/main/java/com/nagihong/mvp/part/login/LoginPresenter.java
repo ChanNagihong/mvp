@@ -7,6 +7,7 @@ import com.nagihong.mvp.api.login.LoginRequestBean;
 import com.nagihong.mvp.base.api.ApiCallback;
 import com.nagihong.mvp.base.api.ApiResultBean;
 import com.nagihong.mvp.base.view.BasePresenter;
+import com.nagihong.mvp.database.transactions.UserTransaction;
 import com.nagihong.mvp.model.UserBean;
 
 import okhttp3.Call;
@@ -16,6 +17,8 @@ import okhttp3.Call;
  */
 
 public class LoginPresenter extends BasePresenter<ILogin.IView> implements ILogin.IPresenter {
+
+    private UserTransaction transaction;
 
     public LoginPresenter(ILogin.IView mView) {
         super(mView);
@@ -43,6 +46,7 @@ public class LoginPresenter extends BasePresenter<ILogin.IView> implements ILogi
 
             @Override
             public void onSuccess(UserBean result) {
+                getUserTransaction().clearThenSave(result);
                 mView.onLoginSuccess(result);
             }
         });
@@ -62,7 +66,7 @@ public class LoginPresenter extends BasePresenter<ILogin.IView> implements ILogi
 
             @Override
             public void onFailure(ApiResultBean result) {
-                if(null == result) {
+                if (null == result) {
                     mView.onLoginFailed("onFailure()");
                 } else {
                     mView.onLoginFailed(result.getMsg());
@@ -75,4 +79,12 @@ public class LoginPresenter extends BasePresenter<ILogin.IView> implements ILogi
             }
         });
     }
+
+    private UserTransaction getUserTransaction() {
+        if (null == transaction) {
+            transaction = new UserTransaction();
+        }
+        return transaction;
+    }
+
 }

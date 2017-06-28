@@ -1,4 +1,4 @@
-package com.nagihong.mvp.database;
+package com.nagihong.mvp.database.greendao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,20 +21,20 @@ public class DaoMaster extends AbstractDaoMaster {
 
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(Database db, boolean ifNotExists) {
-        UserBeanDao.createTable(db, ifNotExists);
         DocumentBeanDao.createTable(db, ifNotExists);
         FileBeanDao.createTable(db, ifNotExists);
         MusicBeanDao.createTable(db, ifNotExists);
         PhotoBeanDao.createTable(db, ifNotExists);
+        UserBeanDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(Database db, boolean ifExists) {
-        UserBeanDao.dropTable(db, ifExists);
         DocumentBeanDao.dropTable(db, ifExists);
         FileBeanDao.dropTable(db, ifExists);
         MusicBeanDao.dropTable(db, ifExists);
         PhotoBeanDao.dropTable(db, ifExists);
+        UserBeanDao.dropTable(db, ifExists);
     }
 
     /**
@@ -53,11 +53,11 @@ public class DaoMaster extends AbstractDaoMaster {
 
     public DaoMaster(Database db) {
         super(db, SCHEMA_VERSION);
-        registerDaoClass(UserBeanDao.class);
         registerDaoClass(DocumentBeanDao.class);
         registerDaoClass(FileBeanDao.class);
         registerDaoClass(MusicBeanDao.class);
         registerDaoClass(PhotoBeanDao.class);
+        registerDaoClass(UserBeanDao.class);
     }
 
     public DaoSession newSession() {

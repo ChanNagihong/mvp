@@ -10,7 +10,7 @@ import org.greenrobot.greendao.annotation.Id;
 @Entity
 public class UserBean {
 
-    @Id(autoincrement = true)
+    @Id
     private Long id;
     private String accountId;
     private String name;

@@ -23,7 +23,7 @@ android {
 
 greendao {
     schemaVersion 1
-    daoPackage 'com.nagihong.mvp.database'
+    daoPackage 'com.nagihong.mvp.database.greendao'
     targetGenDir 'src/main/java'
 }
 
@@ -41,4 +41,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
     compile 'org.greenrobot:greendao:3.2.2'
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
 }

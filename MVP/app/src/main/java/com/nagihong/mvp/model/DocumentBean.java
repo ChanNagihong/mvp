@@ -10,7 +10,7 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class DocumentBean extends FileBean {
 
-    @Id(autoincrement = true)
+    @Id
     private Long id;
     private boolean supportPreview;
     private boolean supportShare;

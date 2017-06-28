@@ -1,10 +1,8 @@
 package com.nagihong.mvp.model;
 
-import android.support.annotation.IntDef;
-
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
+import org.greenrobot.greendao.annotation.Id;
 
 /**
  * Created by channagihong on 25/06/2017.
@@ -12,7 +10,7 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class FileBean {
 
-    @Id(autoincrement = true)
+    @Id
     private Long id;
     private String fileName;
     private String extension;

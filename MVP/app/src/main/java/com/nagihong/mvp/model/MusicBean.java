@@ -10,7 +10,7 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class MusicBean extends FileBean{
 
-    @Id(autoincrement = true)
+    @Id
     private Long id;
     private long duration;
     private String singer;

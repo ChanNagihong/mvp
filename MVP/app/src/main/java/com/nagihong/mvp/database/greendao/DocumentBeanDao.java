@@ -1,4 +1,4 @@
-package com.nagihong.mvp.database;
+package com.nagihong.mvp.database.greendao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
@@ -44,7 +44,7 @@ public class DocumentBeanDao extends AbstractDao<DocumentBean, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"DOCUMENT_BEAN\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
+                "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
                 "\"SUPPORT_PREVIEW\" INTEGER NOT NULL ," + // 1: supportPreview
                 "\"SUPPORT_SHARE\" INTEGER NOT NULL ," + // 2: supportShare
                 "\"LINK_APP\" TEXT," + // 3: linkApp

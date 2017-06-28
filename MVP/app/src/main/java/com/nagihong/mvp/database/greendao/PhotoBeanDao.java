@@ -1,4 +1,4 @@
-package com.nagihong.mvp.database;
+package com.nagihong.mvp.database.greendao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
@@ -53,7 +53,7 @@ public class PhotoBeanDao extends AbstractDao<PhotoBean, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"PHOTO_BEAN\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
+                "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
                 "\"LOCATION\" TEXT," + // 1: location
                 "\"WIDTH\" INTEGER NOT NULL ," + // 2: width
                 "\"HEIGHT\" INTEGER NOT NULL ," + // 3: height

@@ -10,7 +10,7 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class PhotoBean extends FileBean {
 
-    @Id(autoincrement = true)
+    @Id
     private Long id;
     private String location;
     private int width;
